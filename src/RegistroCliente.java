@@ -2,6 +2,10 @@
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
+/**
+ * Classe que realiza as operações de salvamento dos atributos cliente.
+ * 
+ */
 public class RegistroCliente extends Cliente {
 
     /**

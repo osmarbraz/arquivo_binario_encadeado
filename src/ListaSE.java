@@ -1,7 +1,6 @@
 /**
  * Realiza a manipulação encadeada do arquivo binário.
  * 
- * @author osmar
  */
 public class ListaSE {
 

@@ -1,6 +1,10 @@
 
 import java.io.*;
 
+/**
+ * Classe que realiza as operações de salvamento dos atributos de início.
+ * 
+ */
 public class RegistroInicio extends Inicio {
 
     /**
