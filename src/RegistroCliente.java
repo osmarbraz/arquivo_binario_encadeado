@@ -121,7 +121,7 @@ public class RegistroCliente extends Cliente {
      * @return Um inteiro com o tamanho do registro do cliente.
      */
     public static int getTamanhoRegistro() {
-        // 4 código + 30 nome + 15 endereco + 8 salario + 4 idade
+        // 4 código + 30 nome + 15 endereco + 8 salario + 4 idade + 4 proximo
         // código int = 4 bytes
         // nome String = 30 caracteres = 1 caracter ocupada 2 bytes = 60 bytes
         // endereço String = 20 caracteres = 1 caracter ocupada 2 bytes = 30 bytes        

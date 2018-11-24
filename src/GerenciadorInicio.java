@@ -113,13 +113,10 @@ public class GerenciadorInicio {
         try {
             //Posiciona o arquivo no posição a ser alterado
             arquivo.seek(posicao * RegistroInicio.getTamanhoRegistro());
-
             //Instancia o regitro 
             RegistroInicio registro = new RegistroInicio(inicio);
-
             //Escreve o registro no arquivo
             registro.escrita(arquivo);
-
             //Sucesso na atualização
             return true;
         } catch (IOException io) {
