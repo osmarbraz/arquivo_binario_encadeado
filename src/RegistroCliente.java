@@ -32,7 +32,7 @@ public class RegistroCliente extends Cliente {
     /**
      * Construtor com parâmetros.
      *
-     * @param cliente Um cliente
+     * @param cliente Um objeto cliente.
      */
     public RegistroCliente(Cliente cliente) {
         super(cliente.getCodigo(), cliente.getNome(), cliente.getEndereco(), cliente.getSalario(), cliente.getIdade(), cliente.getProximo());

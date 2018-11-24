@@ -18,6 +18,16 @@ public class Cliente {
         this(0, "", "", 0.0, 0, -1);
     }
 
+    /**
+     * Construtor com parâmetros.
+     *
+     * @param codigo Código de um cliente.
+     * @param nome Nome de um cliente.
+     * @param endereco Endereço de um cliente.
+     * @param salario Salário de um cliente.
+     * @param idade Idade de um cliente
+     * @param proximo Próximo registro de cliente.
+     */
     public Cliente(int codigo, String nome, String endereco, double salario, int idade, int proximo) {
         setCodigo(codigo);
         setNome(nome);
@@ -26,7 +36,8 @@ public class Cliente {
         setIdade(idade);
         setProximo(proximo);
     }
-
+    
+     // Get´s e Set´s
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
@@ -75,7 +86,11 @@ public class Cliente {
         this.proximo = proximo;
     }
 
-    @Override
+    /**
+     * Retorna os dados de cliente em uma String.
+     *
+     * @return Uma String com os dados.
+     */
     public String toString() {
         return ("Código: " + getCodigo() + " \\ Nome: " + getNome()
                 + "\\ Endereço: " + getEndereco() + " \\ Salário: "

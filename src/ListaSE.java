@@ -3,6 +3,10 @@
  * 
  */
 public class ListaSE {
+    
+    /**
+     * Inicio é recuperado do arquivo de início.
+     */
 
     /**
      * Aloca um novo registro no arquivo e retorna posição de inclusão.
@@ -43,13 +47,16 @@ public class ListaSE {
         if (posicao != -1) {
             //Instancia o Gerenciador de Cliente
             gerenciador = new GerenciadorCliente();
+            //Realiza a leitura de um cliente da posição especificada
             dado = gerenciador.leitura(posicao);
         }
         return dado;
     }
 
     /**
-     * Modificado do início do arquivo.
+     * Modificado o valor de início do arquivo.
+     * 
+     * Salva o valor de dado(início) no arquivo de início.
      *
      * @param dado Valor do início.
      */
@@ -63,9 +70,9 @@ public class ListaSE {
     }
 
     /**
-     * Retorna o inicio do arquivo.
+     * Retorna o valor de inicio do arquivo.
      *
-     * @return O valor do início
+     * @return O valor do início.
      */
     public int getInicio() {
         //Instancia o Gerenciador de Início
@@ -78,6 +85,8 @@ public class ListaSE {
 
     /**
      * Inclusão no início.
+     * 
+     * Incluí logicamente um registro no início.
      *
      * @param novo Um novo cliente;
      *
@@ -85,7 +94,7 @@ public class ListaSE {
      */
     public boolean inserirInicio(Cliente novo) {
         novo.setProximo(getInicio());   //Coloca o início no próximo do novo
-        int posicaoNovo = alocar(novo); // Aloca e obtêm a posição de um novo nó
+        int posicaoNovo = alocar(novo); // Aloca(salva no arquivo) e obtêm a posição de um novo nó no arquivo
         setInicio(posicaoNovo); // atribui o novo início
         return true;
     }
@@ -96,6 +105,7 @@ public class ListaSE {
      * @return Uma String com os dados do arquivo.
      */
     public String listarLogico() {
+        //String de retorno
         String linha = "";
         if (getInicio() != -1) {
             //Pega o cliente atual a partir do início
@@ -117,7 +127,9 @@ public class ListaSE {
      * @return Uma String com os dados do arquivo.
      */
     public String listarFisico() {
+        //String de retorno
         String linha = "";
+        //Instancia o Gerenciador de Cliente
         GerenciadorCliente gerente = new GerenciadorCliente();
         linha = gerente.listarFisico();
         return linha;
@@ -129,14 +141,17 @@ public class ListaSE {
      * @return Uma string com os dados do arquivo.
      */
     public String informacoes() {
-        String informacoes = "";
+        //String de retorno
+        String linha = "";
+        //Instancia o Gerenciador de Cliente
         GerenciadorCliente cliente = new GerenciadorCliente();
-        informacoes = "Arquivo Cliente = " + cliente.informacoes();
+        linha = "Arquivo Cliente = " + cliente.informacoes();
 
+        //Instancia o Gerenciador de Início
         GerenciadorInicio inicio = new GerenciadorInicio();
-        informacoes = informacoes + "\nArquivo Início = " + inicio.informacoes();
+        linha = linha + "\nArquivo Início = " + inicio.informacoes();
 
-        return informacoes;
+        return linha;
     }
 
     /**
@@ -145,9 +160,11 @@ public class ListaSE {
      * @return Se conseguiu esvaziar os arquivos.
      */
     public boolean zeraArquivo() {
+        //Instancia o Gerenciador de Cliente
         GerenciadorCliente cliente = new GerenciadorCliente();
         cliente.zeraArquivo();
 
+        //Instancia o Gerenciador de Início
         GerenciadorInicio inicio = new GerenciadorInicio();
         inicio.zeraArquivo();
 
